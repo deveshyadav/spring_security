@@ -22,6 +22,8 @@ public class SecurityConfig {
                         .antMatchers("/api/admin").hasRole("ADMIN")  // Admin-only endpoint
                         .anyRequest().authenticated()                // All other endpoints require authentication
                 )
+                //.oauth2Login() In case of oauth2 login
+                //.and()
                 .httpBasic();  // Using basic authentication
 
         return http.build();
